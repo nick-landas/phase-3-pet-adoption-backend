@@ -1,5 +1,4 @@
 class AdoptionsController < ApplicationController
-
 #     get '/adoptions' do
 
 #         adoptions = Adoption.all
