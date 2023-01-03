@@ -1,0 +1,7 @@
+# Test files
+/spec/
+
+# Database information
+/db/seeds.rb
+/db/schema.rb
+/db/development.sqlite3
