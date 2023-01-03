@@ -14,8 +14,4 @@ use Rack::JSONBodyParser
 # Our application
 run ApplicationController
 
-<<<<<<< HEAD
 # use AdoptionsController
-=======
-use AdoptionsController
->>>>>>> refs/remotes/origin/main
