@@ -4,9 +4,10 @@ class ApplicationController < Sinatra::Base
   configure do
     set :views, 'app/views'
   end
-  
-  # Agdd routes
+
+  require 'erb'
+
+  # Add routes
   get '/' do
-    erb :welcome
   end
 end
