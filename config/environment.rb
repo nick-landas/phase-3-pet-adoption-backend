@@ -4,8 +4,10 @@ ENV['RACK_ENV'] ||= 'development'
 require 'bundler/setup'
 Bundler.require(:default, ENV['RACK_ENV'])
 
-# Require in all files in 'app' directory
-require_all 'app/models'
-require 'active_record'
-require 'sinatra'
-require 'sqlite3'
+require './app/controllers/application_controller'
+require_all 'app'
+# require 'active_record'
+# require 'sinatra'
+# require 'sqlite3'
+
+
