@@ -5,7 +5,7 @@ class PetsController < ApplicationController
     end
 
     get '/pets/:id' do
-        pet = pet.find(params[:id]).to_json
+        pet = Pet.find(params[:id]).to_json
     end
 
     post '/pets' do
