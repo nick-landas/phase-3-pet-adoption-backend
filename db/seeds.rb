@@ -9,7 +9,7 @@ Pet.destroy_all
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
     phone_number: Faker::PhoneNumber.phone_number,
-    home_address: Faker::Address.full_address_as_hash(:full_address)
+    home_address: Faker::Address.full_address
   )
 
   Pet.create!(

@@ -3,7 +3,7 @@
 # class to manage adoption applications in ar table
 class AdoptionApplication < ActiveRecord::Base
   belongs_to :owner
-  has_one :pet
+  belongs_to :pet
 
   def approve
     self.accepted = true
