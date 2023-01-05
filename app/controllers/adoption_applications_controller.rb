@@ -3,7 +3,7 @@
 # router for adoption_applications table
 class AdoptionApplicationsController < ApplicationController
   get '/adoption-applications' do
-    AdoptionApplication.all.to_json
+    AdoptionApplication.all.map(&:information).to_json
   end
 
   get '/adoption-applications/:id' do
