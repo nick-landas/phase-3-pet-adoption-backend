@@ -11,7 +11,7 @@ class AdoptionApplicationsController < ApplicationController
   end
 
   post '/adoption-applications' do
-    AdoptionApplication.create(params).to_json
+    AdoptionApplication.create(params).information.to_json
   end
 
   patch '/adoption-applications/:id' do
