@@ -3,7 +3,7 @@
 # router for owners table
 class OwnersController < ApplicationController
   get '/owners' do
-    Owner.all.to_json
+    Owner.all.map(&:information).to_json
   end
 
   get '/owners/:id' do
@@ -11,7 +11,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
-    Owner.create(params).to_json
+    Owner.create(params).to_json(include: :pets)
   end
 
   patch '/owners/:id' do

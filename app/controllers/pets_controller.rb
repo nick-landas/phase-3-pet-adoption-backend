@@ -3,7 +3,7 @@
 # router for pets table using sinatra
 class PetsController < ApplicationController
   get '/pets' do
-    Pet.all.to_json
+    Pet.all.to_json(id: :id)
   end
 
   get '/pets/:id' do

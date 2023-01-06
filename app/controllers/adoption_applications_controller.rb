@@ -3,7 +3,7 @@
 # router for adoption_applications table
 class AdoptionApplicationsController < ApplicationController
   get '/adoption-applications' do
-    AdoptionApplication.all.to_json
+    AdoptionApplication.all.map(&:information).to_json
   end
 
   get '/adoption-applications/:id' do
@@ -11,7 +11,7 @@ class AdoptionApplicationsController < ApplicationController
   end
 
   post '/adoption-applications' do
-    AdoptionApplication.create(params).to_json
+    AdoptionApplication.create(params).information.to_json
   end
 
   patch '/adoption-applications/:id' do
