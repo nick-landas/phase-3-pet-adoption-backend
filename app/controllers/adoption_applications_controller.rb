@@ -7,7 +7,7 @@ class AdoptionApplicationsController < ApplicationController
   end
 
   get '/adoption-applications/:id' do
-    AdoptionApplication.find(params[:id]).to_json
+    AdoptionApplication.find(params[:id]).information.to_json
   end
 
   post '/adoption-applications' do
@@ -17,7 +17,7 @@ class AdoptionApplicationsController < ApplicationController
   patch '/adoption-applications/:id' do
     adoption = AdoptionApplication.find(params[:id])
     adoption.update(params)
-    adoption.to_json
+    adoption.information.to_json
   end
 
   patch '/adoption-applications/:id/approve' do
@@ -29,6 +29,9 @@ class AdoptionApplicationsController < ApplicationController
   end
 
   delete '/adoption-applications/:id' do
-    AdoptionApplication.find(params[:id]).destroy
+    app = AdoptionApplication.find(params[:id])
+    app_info = app.information
+    app.destroy
+    app_info.to_json
   end
 end

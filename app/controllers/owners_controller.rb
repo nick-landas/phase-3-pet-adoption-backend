@@ -7,20 +7,23 @@ class OwnersController < ApplicationController
   end
 
   get '/owners/:id' do
-    Owner.find(params[:id]).to_json
+    Owner.find(params[:id]).information.to_json
   end
 
   post '/owners' do
-    Owner.create(params).to_json(include: :pets)
+    Owner.create(params).information.to_json
   end
 
   patch '/owners/:id' do
     owner = Owner.find(params[:id])
     owner.update(params)
-    owner.to_json
+    owner.information.to_json
   end
 
   delete '/owners/:id' do
-    Owner.find(params[:id]).destroy
+    owner = Owner.find(params[:id])
+    owner_info = owner.information
+    owner.destroy
+    owner_info.to_json
   end
 end
