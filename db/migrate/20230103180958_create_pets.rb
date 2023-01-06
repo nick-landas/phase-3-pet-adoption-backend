@@ -10,6 +10,7 @@ class CreatePets < ActiveRecord::Migration[6.1]
       t.boolean :house_broken
       t.string :name
       t.string :personality
+      t.string :image
       t.integer :owner_id
     end
   end
