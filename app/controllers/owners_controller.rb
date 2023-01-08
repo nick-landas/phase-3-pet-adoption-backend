@@ -22,6 +22,7 @@ class OwnersController < ApplicationController
 
   delete '/owners/:id' do
     owner = Owner.find(params[:id])
+    owner.adoption_applications.each(&:destroy)
     owner_info = owner.information
     owner.destroy
     owner_info.to_json
